@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 
 const PMSchema = new mongoose.Schema({
-    name: {
+    title: {
         type: String
     },
-    age: {
+    price: {
         type: Number
+    },
+    description:{
+        type: String
     }
-});
+}, {timestamps:true})
 
 const productManager = mongoose.model('productManager', PMSchema);
 
