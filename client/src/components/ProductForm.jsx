@@ -22,21 +22,25 @@ const ProductForm = (props) => {
                 setProducts([...products, res.data.product]);
             })
             .catch(err => console.log(err))
+
+            setTitle("");
+            setPrice("");
+            setDescription("");
     }
 
     return (
         <form onSubmit={onSubmitHandler}>
             <p>
                 <label>Title</label><br />
-                <input type="text" onChange={(e) => setTitle(e.target.value)} />
+                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
             </p>
             <p>
                 <label>Price</label><br />
-                <input type="number" onChange={(e) => setPrice(e.target.value)} />
+                <input type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
             </p>
             <p>
                 <label>Description</label><br />
-                <input type="text" onChange={(e) => setDescription(e.target.value)} />
+                <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
             </p>
             <input type="submit" />
         </form>
