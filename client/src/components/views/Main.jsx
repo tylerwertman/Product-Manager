@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import ProductList from '../ProductList';
-import ProductForm from '../ProductForm';
+import Add from '../Add';
 const Main = (props) => {
 
     const { products, setProducts } = props;
@@ -23,7 +23,7 @@ const Main = (props) => {
 
     return (
         <div>
-            <ProductForm products={products} setProducts={setProducts} />
+            <Add products={products} setProducts={setProducts} />
             <hr />
             <ProductList products={products} setProducts={setProducts} removeFromDom={removeFromDom}/>
         </div>
