@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 import DeleteBtn from './DeleteBtn';
 
-const PersonList = (props) => {
+const ProductList = (props) => {
     
     const { products, setProducts } = props;
 
@@ -17,7 +17,6 @@ const PersonList = (props) => {
                     return <div key={index}>
                     <Link to={`/products/${product._id}`}>{product.title}'s Page! </Link>&nbsp;
                     <Link to={`/products/edit/${product._id}`}>Edit</Link>&nbsp;
-                    {/* <button onClick={(e) => { deleteProduct(product._id) }}>Delete</button> */}
                     <DeleteBtn product={product} removeFromDom={removeFromDom}/>
                     </div>
                 })
@@ -25,5 +24,5 @@ const PersonList = (props) => {
         </div>
     )
 }
-export default PersonList;
+export default ProductList;
 

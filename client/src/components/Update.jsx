@@ -35,7 +35,7 @@ const Update = (props) => {
             })
             .catch(err => console.log(err))
     }
-    console.log(title)
+    // console.log(title)
     return (
         <div>
             <h1>Update a Product</h1>

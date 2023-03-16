@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios';
 import ProductList from '../ProductList';
 import Add from '../Add';
+// import { useNavigate } from 'react-router-dom';
 const Main = (props) => {
+    // const navigate = useNavigate()
 
     const { products, setProducts } = props;
 
@@ -13,13 +15,16 @@ const Main = (props) => {
     useEffect(() => {
         axios.get("http://localhost:8000/api/products")
             .then((res) => {
-                // console.log(res.data.products);
-                setProducts(res.data.products);
+                console.log(res.data.products);
+                // setProducts(res.data.products);
             })
             .catch((err) => {
                 console.log(err);
+                // navigate("/home")
+                // setProducts(...products)
+
             })
-    }, [])//products inside //spam refresh console but clears list on return to home
+    }, [])
 
     return (
         <div>
